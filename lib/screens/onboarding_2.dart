@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:food_ninja/utils/colors.dart';
+import 'package:food_ninja/widgets/next_button.dart';
 
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({super.key});
@@ -49,25 +48,7 @@ class Onboarding2 extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Container(
-              width: 157,
-              height: 57,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  gradient: const LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [Color(0xff53e78b), Color(0xff14be77)],
-                  )),
-              child: const Center(
-                child: Text("Next",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    )),
-              ),
-            ),
+            const Next(),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.06)
           ],
         ),
