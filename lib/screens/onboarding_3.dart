@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/screens/signup.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 
@@ -39,7 +40,14 @@ class Onboarding3 extends StatelessWidget {
             const SizedBox(
               height: 42,
             ),
-            const Next(),
+            InkWell(
+                onTap: () => {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignUp();
+                      }))
+                    },
+                child: const Next()),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.05)
           ],
         ),
