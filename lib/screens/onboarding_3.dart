@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 
-class Onboarding2 extends StatelessWidget {
-  const Onboarding2({super.key});
+class Onboarding3 extends StatelessWidget {
+  const Onboarding3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,13 @@ class Onboarding2 extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.15,
+              height: MediaQuery.of(context).size.height * 0.13,
             ),
-            Image.asset('assets/images/illustrations.png'),
+            Image.asset('assets/images/illustrations2.png'),
             const SizedBox(
               height: 39,
             ),
-            Text("Find your Comfort \n Food here",
+            Text("Food Ninja is Where Your \n Comfort Food Lives",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: darkBlue,
@@ -29,8 +29,7 @@ class Onboarding2 extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Text(
-                "Here You Can find a chef or dish for every \n taste and color. Enjoy!",
+            Text("Enjoy a fast and smooth food delivery at \n your doorstep",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: darkBlue,
