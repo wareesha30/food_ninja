@@ -16,7 +16,7 @@ class Onboarding3 extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.13,
             ),
-            Image.asset('assets/images/illustrations2.png'),
+            Image.asset('assets/images/illustration2.png'),
             const SizedBox(
               height: 39,
             ),
@@ -40,14 +40,13 @@ class Onboarding3 extends StatelessWidget {
             const SizedBox(
               height: 42,
             ),
-            InkWell(
-                onTap: () => {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const SignUp();
-                      }))
-                    },
-                child: const Next()),
+            NextButton(
+              onTap: () => {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const SignUp();
+                }))
+              },
+            ),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.05)
           ],
         ),
