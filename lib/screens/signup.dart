@@ -13,7 +13,11 @@ class SignUp extends StatelessWidget {
       child: Scaffold(
           body: Stack(
         children: [
-          Positioned.fill(child: Image.asset('assets/images/pattern.png')),
+          Positioned.fill(
+              child: Image.asset(
+            'assets/images/pattern.png',
+            fit: BoxFit.cover,
+          )),
           Positioned(
               top: 80,
               right: 100,
@@ -60,19 +64,11 @@ class SignUp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       FacebookGoogleButton(
-                        icon: Icon(
-                          Icons.facebook,
-                          color: blue,
-                          size: 40,
-                        ),
+                        icon: Image.asset('assets/images/facebook.png'),
                         text: 'Facebook',
                       ),
                       FacebookGoogleButton(
-                        icon: Icon(
-                          Icons.facebook,
-                          color: blue,
-                          size: 40,
-                        ),
+                        icon: Image.asset('assets/images/google.png'),
                         text: 'Google',
                       ),
                     ],
