@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/utils/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
@@ -6,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final EdgeInsetsGeometry? contentPadding;
   final double? inputFieldHeight;
-  final Color? outlineBorderColor;
+  final Image? prefixIcon;
 
   const CustomTextField({
     Key? key,
@@ -15,7 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.contentPadding,
     this.obscure,
     this.inputFieldHeight,
-    this.outlineBorderColor,
+    this.prefixIcon,
   }) : super(key: key);
 
   @override
@@ -24,24 +25,28 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscure ?? false,
       style: const TextStyle(fontSize: 20),
       decoration: InputDecoration(
-        label: Text(label),
+        prefixIcon: prefixIcon,
+        label: Text(
+          label,
+          style: TextStyle(color: grey),
+        ),
         alignLabelWithHint: true,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Color.fromARGB(255, 21, 21, 170),
+          borderRadius: BorderRadius.circular(15),
+          borderSide: BorderSide(
+            color: blue,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: outlineBorderColor ?? Colors.black,
+          borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            color: Color(0xFFF4F4F4),
           ),
         ),
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: inputFieldHeight ?? 16.0,
+              horizontal: 40,
+              vertical: inputFieldHeight ?? 15.0,
             ),
       ),
     );
