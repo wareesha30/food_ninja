@@ -14,22 +14,6 @@ class FacebookGoogleButton extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFFF4F4F4)),
         borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 168, 166, 166).withOpacity(0.2),
-            blurRadius: 50,
-            offset: const Offset(0, 10),
-          ),
-          const BoxShadow(
-            color: Colors.transparent,
-            offset: Offset(10, 0),
-          ),
-          const BoxShadow(
-            color: Colors.transparent,
-            offset: Offset(-10, 0),
-          ),
-        ],
       ),
       child: Center(
         child: Row(

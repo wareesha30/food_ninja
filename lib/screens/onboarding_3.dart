@@ -46,6 +46,7 @@ class Onboarding3 extends StatelessWidget {
                   return const SignUp();
                 }))
               },
+              text: 'Next',
             ),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.05)
           ],
