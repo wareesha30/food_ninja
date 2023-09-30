@@ -15,6 +15,7 @@ class _KeepSignedInCheckboxState extends State<KeepSignedInCheckbox> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Expanded(
           child: CheckboxListTile(
