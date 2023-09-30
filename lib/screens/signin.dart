@@ -38,7 +38,7 @@ class SignIn extends StatelessWidget {
                     const Text("Sign Up For Free",
                         style: TextStyle(
                           fontSize: 22,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w800,
                         )),
                     const SizedBox(
                       height: 30,

@@ -41,7 +41,7 @@ class SignUp extends StatelessWidget {
                       const Text("Login To Your Account",
                           style: TextStyle(
                             fontSize: 22,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w800,
                           )),
                       const SizedBox(
                         height: 30,
