@@ -25,7 +25,7 @@ class SignUp extends StatelessWidget {
                 fit: BoxFit.cover,
               )),
               Positioned(
-                  top: 70,
+                  top: 60,
                   right: 40,
                   left: 40,
                   child: Column(
@@ -36,7 +36,7 @@ class SignUp extends StatelessWidget {
                         height: 200,
                       ),
                       const SizedBox(
-                        height: 60,
+                        height: 50,
                       ),
                       const Text("Login To Your Account",
                           style: TextStyle(
@@ -44,7 +44,7 @@ class SignUp extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           )),
                       const SizedBox(
-                        height: 40,
+                        height: 30,
                       ),
                       const CustomTextField(
                         label: 'Email',

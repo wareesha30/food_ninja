@@ -25,84 +25,82 @@ class SignIn extends StatelessWidget {
                 fit: BoxFit.cover,
               )),
               Positioned(
-                top: 70,
+                top: 60,
                 right: 40,
                 left: 40,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/logo_group.png',
-                          width: 200, height: 200),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      const Text("Sign Up For Free",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                          )),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      CustomTextField(
-                        label: 'Anamwp . . |',
-                        keyboardType: TextInputType.name,
-                        prefixIcon: Image.asset('assets/images/Profile.png'),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      CustomTextField(
-                        label: 'Email',
-                        keyboardType: TextInputType.emailAddress,
-                        prefixIcon: Image.asset('assets/images/Message.png'),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      CustomTextField(
-                        label: 'Password',
-                        keyboardType: TextInputType.visiblePassword,
-                        obscure: true,
-                        prefixIcon: Image.asset('assets/images/Lock.png'),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      KeepSignedInCheckbox(
-                        text: 'Keep Me Signed In',
-                      ),
-                      KeepSignedInCheckbox(
-                        text: 'Email Me About Special Pricing',
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      NextButton(
-                        width: 190,
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const Onboarding3();
-                          }));
-                        },
-                        text: 'Create Account',
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        "already have an account?",
+                child: Column(
+                  children: [
+                    Image.asset('assets/images/logo_group.png',
+                        width: 200, height: 200),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    const Text("Sign Up For Free",
                         style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: darkGreen,
-                        ),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    CustomTextField(
+                      label: 'Anamwp . . |',
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Image.asset('assets/images/Profile.png'),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    CustomTextField(
+                      label: 'Email',
+                      keyboardType: TextInputType.emailAddress,
+                      prefixIcon: Image.asset('assets/images/Message.png'),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    CustomTextField(
+                      label: 'Password',
+                      keyboardType: TextInputType.visiblePassword,
+                      obscure: true,
+                      prefixIcon: Image.asset('assets/images/Lock.png'),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    KeepSignedInCheckbox(
+                      text: 'Keep Me Signed In',
+                    ),
+                    KeepSignedInCheckbox(
+                      text: 'Email Me About Special Pricing',
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    NextButton(
+                      width: 190,
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Onboarding3();
+                        }));
+                      },
+                      text: 'Create Account',
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "already have an account?",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: darkGreen,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              )
+              ),
             ],
           )),
     );
