@@ -25,7 +25,7 @@ class SignIn extends StatelessWidget {
                 fit: BoxFit.cover,
               )),
               Positioned(
-                top: 70,
+                top: 60,
                 right: 40,
                 left: 40,
                 child: Column(
@@ -33,15 +33,15 @@ class SignIn extends StatelessWidget {
                     Image.asset('assets/images/logo_group.png',
                         width: 200, height: 200),
                     const SizedBox(
-                      height: 60,
+                      height: 50,
                     ),
                     const Text("Sign Up For Free",
                         style: TextStyle(
                           fontSize: 22,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w800,
                         )),
                     const SizedBox(
-                      height: 40,
+                      height: 30,
                     ),
                     CustomTextField(
                       label: 'Anamwp . . |',
