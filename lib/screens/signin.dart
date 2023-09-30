@@ -68,11 +68,11 @@ class SignIn extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const KeepSignedInCheckbox(
+                    KeepSignedInCheckbox(
                       text: 'Keep Me Signed In',
                     ),
-                    const KeepSignedInCheckbox(
-                      text: 'Keep Me Signed In',
+                    KeepSignedInCheckbox(
+                      text: 'Email Me About Special Pricing',
                     ),
                     const SizedBox(
                       height: 30,
@@ -100,7 +100,7 @@ class SignIn extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           )),
     );
