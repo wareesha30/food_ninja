@@ -28,6 +28,8 @@ class _KeepSignedInCheckboxState extends State<KeepSignedInCheckbox> {
         });
       },
       controlAffinity: ListTileControlAffinity.leading,
+      contentPadding: EdgeInsets.zero,
+      dense: true,
     );
   }
 }
