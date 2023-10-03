@@ -14,21 +14,21 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-      child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: Stack(
-            children: [
-              Positioned.fill(
-                  child: Image.asset(
-                'assets/images/pattern.png',
-                fit: BoxFit.cover,
-              )),
-              Positioned(
-                  top: 60,
-                  right: 40,
-                  left: 40,
-                  bottom: 21,
-                  child: SingleChildScrollView(
+      child: SafeArea(
+        child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            body: Stack(
+              children: [
+                Positioned.fill(
+                    child: Image.asset(
+                  'assets/images/pattern.png',
+                  fit: BoxFit.cover,
+                )),
+                Positioned.fill(
+                    child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 30),
                     child: Column(
                       children: [
                         Image.asset(
@@ -71,15 +71,21 @@ class SignUp extends StatelessWidget {
                           height: 30,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FacebookGoogleButton(
-                              icon: Image.asset('assets/images/facebook.png'),
-                              text: 'Facebook',
+                            Expanded(
+                              child: FacebookGoogleButton(
+                                icon: Image.asset('assets/images/facebook.png'),
+                                text: 'Facebook',
+                              ),
                             ),
-                            FacebookGoogleButton(
-                              icon: Image.asset('assets/images/google.png'),
-                              text: 'Google',
+                            const SizedBox(
+                              width: 21,
+                            ),
+                            Expanded(
+                              child: FacebookGoogleButton(
+                                icon: Image.asset('assets/images/google.png'),
+                                text: 'Google',
+                              ),
                             ),
                           ],
                         ),
@@ -108,9 +114,11 @@ class SignUp extends StatelessWidget {
                         )
                       ],
                     ),
-                  ))
-            ],
-          )),
+                  ),
+                ))
+              ],
+            )),
+      ),
     );
   }
 }
