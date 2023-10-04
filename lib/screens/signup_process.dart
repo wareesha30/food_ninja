@@ -6,11 +6,24 @@ class SignUpProcess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          leading: BackButton(
-        color: orange,
-      )),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: BackButton(
+              color: orange,
+            )),
+        body: Stack(
+          children: [
+            Positioned.fill(
+                child: Image.asset(
+              'assets/images/pattern2.png',
+              fit: BoxFit.cover,
+            ))
+          ],
+        ),
+      ),
     );
   }
 }
