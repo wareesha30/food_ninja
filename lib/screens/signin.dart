@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/screens/onboarding_3.dart';
 import 'package:food_ninja/utils/colors.dart';
-
 import 'package:food_ninja/widgets/custom_textfield.dart';
-import 'package:food_ninja/widgets/facebook_google_button.dart';
 import 'package:food_ninja/widgets/keep_signedin_checkbox.dart';
 import 'package:food_ninja/widgets/next_button.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
