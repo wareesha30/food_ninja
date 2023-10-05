@@ -14,22 +14,25 @@ class _KeepSignedInCheckboxState extends State<KeepSignedInCheckbox> {
 
   @override
   Widget build(BuildContext context) {
-    return CheckboxListTile(
-      title: Text(
-        widget.text,
+    return ListTileTheme(
+      horizontalTitleGap: 3,
+      child: CheckboxListTile(
+        title: Text(
+          widget.text,
+        ),
+        visualDensity: VisualDensity(vertical: -4, horizontal: -4),
+        checkboxShape: const CircleBorder(),
+        activeColor: darkGreen,
+        value: isChecked,
+        onChanged: (bool? value) {
+          setState(() {
+            isChecked = value!;
+          });
+        },
+        controlAffinity: ListTileControlAffinity.leading,
+        contentPadding: EdgeInsets.zero,
+        dense: true,
       ),
-      visualDensity: VisualDensity.compact,
-      checkboxShape: const CircleBorder(),
-      activeColor: darkGreen,
-      value: isChecked,
-      onChanged: (bool? value) {
-        setState(() {
-          isChecked = value!;
-        });
-      },
-      controlAffinity: ListTileControlAffinity.leading,
-      contentPadding: EdgeInsets.zero,
-      dense: true,
     );
   }
 }

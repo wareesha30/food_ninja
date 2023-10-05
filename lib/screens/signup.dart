@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/screens/signin.dart';
+import 'package:food_ninja/screens/signup_process.dart';
 import 'package:food_ninja/utils/colors.dart';
-
 import 'package:food_ninja/widgets/custom_textfield.dart';
-import 'package:food_ninja/widgets/facebook_google_button.dart';
+import 'package:food_ninja/widgets/keep_signedin_checkbox.dart';
 import 'package:food_ninja/widgets/next_button.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -24,97 +23,93 @@ class SignUp extends StatelessWidget {
               fit: BoxFit.cover,
             )),
             Positioned.fill(
-                child: SingleChildScrollView(
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/logo_group.png',
-                      width: 200,
-                      height: 200,
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    const Text("Login To Your Account",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w800,
-                        )),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    const CustomTextField(
-                      label: 'Email',
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const CustomTextField(
-                      label: 'Password',
-                      keyboardType: TextInputType.visiblePassword,
-                      obscure: true,
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    const Text("Or Continue With",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: FacebookGoogleButton(
-                            icon: Image.asset('assets/images/facebook.png'),
-                            text: 'Facebook',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 21,
-                        ),
-                        Expanded(
-                          child: FacebookGoogleButton(
-                            icon: Image.asset('assets/images/google.png'),
-                            text: 'Google',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    GradientText(
-                      "Forgot Your Password?",
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Image.asset('assets/images/logo_group.png',
+                          width: 200, height: 200),
+                      const SizedBox(
+                        height: 30,
                       ),
-                      colors: [lightGreen, darkGreen],
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    NextButton(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const SignIn();
-                        }));
-                      },
-                      text: 'Login',
-                    )
-                  ],
+                      const Text("Sign Up For Free",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800,
+                          )),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      CustomTextField(
+                        label: 'Anamwp . . |',
+                        keyboardType: TextInputType.name,
+                        prefixIcon: Image.asset('assets/images/Profile.png'),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        label: 'Email',
+                        keyboardType: TextInputType.emailAddress,
+                        prefixIcon: Image.asset('assets/images/Message.png'),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        label: 'Password',
+                        keyboardType: TextInputType.visiblePassword,
+                        obscure: true,
+                        prefixIcon: Image.asset('assets/images/Lock.png'),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const KeepSignedInCheckbox(
+                        text: 'Keep Me Signed In',
+                      ),
+                      const KeepSignedInCheckbox(
+                        text: 'Email Me About Special Pricing',
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      NextButton(
+                        width: 190,
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const SignUpProcess();
+                          }));
+                        },
+                        text: 'Create Account',
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const SignIn();
+                          }));
+                        },
+                        child: Text(
+                          "already have an account?",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: darkGreen,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ))
+            ),
           ],
         )),
       ),

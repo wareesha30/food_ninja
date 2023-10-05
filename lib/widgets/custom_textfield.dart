@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
         ),
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
-              horizontal: 50,
+              horizontal: 30,
               vertical: inputFieldHeight ?? 15.0,
             ),
       ),
