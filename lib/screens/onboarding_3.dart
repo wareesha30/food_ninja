@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/screens/signin.dart';
+import 'package:food_ninja/screens/signup.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 
@@ -43,7 +43,7 @@ class Onboarding3 extends StatelessWidget {
             NextButton(
               onTap: () => {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const SignIn();
+                  return const SignUp();
                 }))
               },
               text: 'Next',
