@@ -26,10 +26,7 @@ class CustomTextField extends StatelessWidget {
       style: const TextStyle(fontSize: 20),
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
-        label: Text(
-          label,
-          style: TextStyle(color: grey),
-        ),
+        hintText: label,
         alignLabelWithHint: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -39,13 +36,13 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: Color(0xFFF4F4F4),
+          borderSide: BorderSide(
+            color: grey,
           ),
         ),
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
-              horizontal: 50,
+              horizontal: 30,
               vertical: inputFieldHeight ?? 15.0,
             ),
       ),
