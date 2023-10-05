@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/utils/textstyle.dart';
 
 class NextButton extends StatelessWidget {
   final Function() onTap;
@@ -28,7 +29,7 @@ class NextButton extends StatelessWidget {
             )),
         child: Center(
           child: Text(text,
-              style: const TextStyle(
+              style: textStyle.copyWith(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
