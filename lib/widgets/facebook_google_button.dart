@@ -9,7 +9,6 @@ class FacebookGoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 152,
       height: 57,
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFFF4F4F4)),

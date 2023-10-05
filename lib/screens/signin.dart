@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/screens/onboarding_3.dart';
+import 'package:food_ninja/screens/signup.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/keep_signedin_checkbox.dart';
+import 'package:food_ninja/widgets/facebook_google_button.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 
 class SignIn extends StatelessWidget {
@@ -12,27 +13,33 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-      child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: Stack(
-            children: [
-              Positioned.fill(
-                  child: Image.asset(
-                'assets/images/pattern.png',
-                fit: BoxFit.cover,
-              )),
-              Positioned(
-                top: 60,
-                right: 40,
-                left: 40,
+      child: SafeArea(
+        child: Scaffold(
+            body: Stack(
+          children: [
+            Positioned.fill(
+                child: Image.asset(
+              'assets/images/pattern.png',
+              fit: BoxFit.cover,
+            )),
+            Positioned.fill(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Image.asset('assets/images/logo_group.png',
-                        width: 200, height: 200),
-                    const SizedBox(
-                      height: 50,
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.05,
                     ),
-                    const Text("Sign Up For Free",
+                    Image.asset(
+                      'assets/images/logo_group.png',
+                      width: 200,
+                      height: 200,
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const Text("Login To Your Account",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w800,
@@ -40,66 +47,81 @@ class SignIn extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    CustomTextField(
-                      label: 'Anamwp . . |',
-                      keyboardType: TextInputType.name,
-                      prefixIcon: Image.asset('assets/images/Profile.png'),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextField(
+                    const CustomTextField(
                       label: 'Email',
                       keyboardType: TextInputType.emailAddress,
-                      prefixIcon: Image.asset('assets/images/Message.png'),
                     ),
                     const SizedBox(
                       height: 15,
                     ),
-                    CustomTextField(
+                    const CustomTextField(
                       label: 'Password',
                       keyboardType: TextInputType.visiblePassword,
                       obscure: true,
-                      prefixIcon: Image.asset('assets/images/Lock.png'),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    KeepSignedInCheckbox(
-                      text: 'Keep Me Signed In',
-                    ),
-                    KeepSignedInCheckbox(
-                      text: 'Email Me About Special Pricing',
                     ),
                     const SizedBox(
                       height: 30,
                     ),
-                    NextButton(
-                      width: 190,
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const Onboarding3();
-                        }));
-                      },
-                      text: 'Create Account',
+                    const Text("Or Continue With",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: FacebookGoogleButton(
+                            icon: Image.asset('assets/images/facebook.png'),
+                            text: 'Facebook',
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 21,
+                        ),
+                        Expanded(
+                          child: FacebookGoogleButton(
+                            icon: Image.asset('assets/images/google.png'),
+                            text: 'Google',
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      "already have an account?",
-                      style: TextStyle(
+                    GradientText(
+                      "Forgot Your Password?",
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: darkGreen,
                       ),
+                      colors: [lightGreen, darkGreen],
                     ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    NextButton(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SignUp();
+                        }));
+                      },
+                      text: 'Login',
+                    ),
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.02,
+                    )
                   ],
                 ),
               ),
-            ],
-          )),
+            ))
+          ],
+        )),
+      ),
     );
   }
 }
