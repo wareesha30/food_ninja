@@ -94,14 +94,8 @@ class SignUp extends StatelessWidget {
                             return const SignIn();
                           }));
                         },
-                        child: Text(
-                          "already have an account?",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: darkGreen,
-                          ),
-                        ),
+                        child: Text("already have an account?",
+                            style: smalltextStyle.copyWith(color: darkGreen)),
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,

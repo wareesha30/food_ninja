@@ -91,10 +91,7 @@ class SignIn extends StatelessWidget {
                     ),
                     GradientText(
                       "Forgot Your Password?",
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: smalltextStyle,
                       colors: [lightGreen, darkGreen],
                     ),
                     const SizedBox(

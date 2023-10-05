@@ -29,13 +29,13 @@ class CustomTextField extends StatelessWidget {
         hintText: label,
         alignLabelWithHint: true,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(22),
           borderSide: BorderSide(
             color: blue,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(22),
           borderSide: BorderSide(
             color: grey,
           ),
