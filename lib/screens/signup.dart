@@ -24,11 +24,12 @@ class SignUp extends StatelessWidget {
             )),
             Positioned.fill(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
+                      SizedBox(
+                          height: MediaQuery.sizeOf(context).height * 0.05),
                       Image.asset('assets/images/logo_group.png',
                           width: 200, height: 200),
                       const SizedBox(
@@ -105,6 +106,9 @@ class SignUp extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      )
                     ],
                   ),
                 ),
