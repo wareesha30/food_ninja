@@ -20,7 +20,7 @@ class _KeepSignedInCheckboxState extends State<KeepSignedInCheckbox> {
         title: Text(
           widget.text,
         ),
-        visualDensity: VisualDensity(vertical: -4, horizontal: -4),
+        visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
         checkboxShape: const CircleBorder(),
         activeColor: darkGreen,
         value: isChecked,
