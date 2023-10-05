@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/screens/onboarding_2.dart';
+import 'package:food_ninja/screens/signin.dart';
 import 'package:food_ninja/screens/signup_process.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpProcess(),
+      home: const Onboarding2(),
     );
   }
 }

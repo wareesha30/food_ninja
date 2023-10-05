@@ -16,108 +16,107 @@ class SignUp extends StatelessWidget {
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       child: SafeArea(
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
             body: Stack(
-              children: [
-                Positioned.fill(
-                    child: Image.asset(
-                  'assets/images/pattern.png',
-                  fit: BoxFit.cover,
-                )),
-                Positioned.fill(
-                    child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 30),
-                    child: Column(
+          children: [
+            Positioned.fill(
+                child: Image.asset(
+              'assets/images/pattern.png',
+              fit: BoxFit.cover,
+            )),
+            Positioned.fill(
+                child: SingleChildScrollView(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/logo_group.png',
+                      width: 200,
+                      height: 200,
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const Text("Login To Your Account",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w800,
+                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const CustomTextField(
+                      label: 'Email',
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const CustomTextField(
+                      label: 'Password',
+                      keyboardType: TextInputType.visiblePassword,
+                      obscure: true,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const Text("Or Continue With",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
                       children: [
-                        Image.asset(
-                          'assets/images/logo_group.png',
-                          width: 200,
-                          height: 200,
-                        ),
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        const Text("Login To Your Account",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w800,
-                            )),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        const CustomTextField(
-                          label: 'Email',
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        const CustomTextField(
-                          label: 'Password',
-                          keyboardType: TextInputType.visiblePassword,
-                          obscure: true,
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        const Text("Or Continue With",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            )),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FacebookGoogleButton(
-                                icon: Image.asset('assets/images/facebook.png'),
-                                text: 'Facebook',
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 21,
-                            ),
-                            Expanded(
-                              child: FacebookGoogleButton(
-                                icon: Image.asset('assets/images/google.png'),
-                                text: 'Google',
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        GradientText(
-                          "Forgot Your Password?",
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                        Expanded(
+                          child: FacebookGoogleButton(
+                            icon: Image.asset('assets/images/facebook.png'),
+                            text: 'Facebook',
                           ),
-                          colors: [lightGreen, darkGreen],
                         ),
                         const SizedBox(
-                          height: 36,
+                          width: 21,
                         ),
-                        NextButton(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const SignIn();
-                            }));
-                          },
-                          text: 'Login',
-                        )
+                        Expanded(
+                          child: FacebookGoogleButton(
+                            icon: Image.asset('assets/images/google.png'),
+                            text: 'Google',
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ))
-              ],
-            )),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    GradientText(
+                      "Forgot Your Password?",
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      colors: [lightGreen, darkGreen],
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    NextButton(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SignIn();
+                        }));
+                      },
+                      text: 'Login',
+                    )
+                  ],
+                ),
+              ),
+            ))
+          ],
+        )),
       ),
     );
   }
