@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_ninja/screens/payment_method.dart';
-import 'package:food_ninja/screens/signup.dart';
+import 'package:food_ninja/screens/signup_process.dart';
+import 'package:food_ninja/screens/upload_photo.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/utils/textstyle.dart';
-import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/next_button.dart';
+import 'package:food_ninja/widgets/payment_photo_button.dart';
 
-class SignUpProcess extends StatelessWidget {
-  const SignUpProcess({super.key});
+class PaymentMethod extends StatelessWidget {
+  const PaymentMethod({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class SignUpProcess extends StatelessWidget {
                         onTap: () => {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const SignUp();
+                                return const SignUpProcess();
                               }))
                             },
                         child: SvgPicture.asset('assets/images/iconback.svg')),
@@ -49,7 +49,7 @@ class SignUpProcess extends StatelessWidget {
                               height: MediaQuery.sizeOf(context).height * 0.03,
                             ),
                             Text(
-                              'Fill in your bio to get \nstarted',
+                              'Payment Method',
                               style: bigtextStyle,
                             ),
                             const SizedBox(
@@ -62,15 +62,39 @@ class SignUpProcess extends StatelessWidget {
                             const SizedBox(
                               height: 22,
                             ),
-                            const CustomTextField(label: 'First Name'),
+                            PaymentPhotoButton(
+                              onTap: () => {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const UploadPhoto();
+                                }))
+                              },
+                              icon: Image.asset('assets/images/paypal.png'),
+                            ),
                             const SizedBox(
                               height: 20,
                             ),
-                            const CustomTextField(label: 'Last Name'),
+                            PaymentPhotoButton(
+                              icon: Image.asset('assets/images/visa.png'),
+                              onTap: () => {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const UploadPhoto();
+                                }))
+                              },
+                            ),
                             const SizedBox(
                               height: 20,
                             ),
-                            const CustomTextField(label: 'Mobile Number'),
+                            PaymentPhotoButton(
+                              icon: Image.asset('assets/images/Payoneer.png'),
+                              onTap: () => {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const UploadPhoto();
+                                }))
+                              },
+                            ),
                             const SizedBox(
                               height: 220,
                             ),
@@ -80,7 +104,7 @@ class SignUpProcess extends StatelessWidget {
                                         Navigator.push(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return const PaymentMethod();
+                                          return const UploadPhoto();
                                         }))
                                       },
                                   text: 'Next'),

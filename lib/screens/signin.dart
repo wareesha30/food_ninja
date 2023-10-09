@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/screens/signup.dart';
 import 'package:food_ninja/utils/colors.dart';
+import 'package:food_ninja/utils/textstyle.dart';
 import 'package:food_ninja/widgets/custom_textfield.dart';
-import 'package:food_ninja/widgets/keep_signedin_checkbox.dart';
 import 'package:food_ninja/widgets/facebook_google_button.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -40,11 +40,7 @@ class SignIn extends StatelessWidget {
                     const SizedBox(
                       height: 40,
                     ),
-                    const Text("Login To Your Account",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w800,
-                        )),
+                    Text("Login To Your Account", style: textStyle),
                     const SizedBox(
                       height: 30,
                     ),
@@ -95,10 +91,7 @@ class SignIn extends StatelessWidget {
                     ),
                     GradientText(
                       "Forgot Your Password?",
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: smalltextStyle,
                       colors: [lightGreen, darkGreen],
                     ),
                     const SizedBox(

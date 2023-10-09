@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/screens/signin.dart';
 import 'package:food_ninja/screens/signup_process.dart';
 import 'package:food_ninja/utils/colors.dart';
+import 'package:food_ninja/utils/textstyle.dart';
 import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/keep_signedin_checkbox.dart';
 import 'package:food_ninja/widgets/next_button.dart';
@@ -35,11 +36,7 @@ class SignUp extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      const Text("Sign Up For Free",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800,
-                          )),
+                      Text("Sign Up For Free", style: textStyle),
                       const SizedBox(
                         height: 20,
                       ),
@@ -97,14 +94,8 @@ class SignUp extends StatelessWidget {
                             return const SignIn();
                           }));
                         },
-                        child: Text(
-                          "already have an account?",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: darkGreen,
-                          ),
-                        ),
+                        child: Text("already have an account?",
+                            style: smalltextStyle.copyWith(color: darkGreen)),
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,

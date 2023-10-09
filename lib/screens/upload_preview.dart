@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_ninja/screens/payment_method.dart';
-import 'package:food_ninja/screens/signup.dart';
-import 'package:food_ninja/utils/colors.dart';
+import 'package:food_ninja/screens/upload_photo.dart';
 import 'package:food_ninja/utils/textstyle.dart';
-import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 
-class SignUpProcess extends StatelessWidget {
-  const SignUpProcess({super.key});
+class UploadPreview extends StatelessWidget {
+  const UploadPreview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +33,7 @@ class SignUpProcess extends StatelessWidget {
                         onTap: () => {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const SignUp();
+                                return const UploadPhoto();
                               }))
                             },
                         child: SvgPicture.asset('assets/images/iconback.svg')),
@@ -49,7 +46,7 @@ class SignUpProcess extends StatelessWidget {
                               height: MediaQuery.sizeOf(context).height * 0.03,
                             ),
                             Text(
-                              'Fill in your bio to get \nstarted',
+                              'Upload Your Profile \nPhoto',
                               style: bigtextStyle,
                             ),
                             const SizedBox(
@@ -60,19 +57,28 @@ class SignUpProcess extends StatelessWidget {
                               style: smalltextStyle,
                             ),
                             const SizedBox(
-                              height: 22,
+                              height: 44,
                             ),
-                            const CustomTextField(label: 'First Name'),
+                            Stack(children: [
+                              Center(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(30),
+                                  child: Image.asset(
+                                      'assets/images/imagepreview.png'),
+                                ),
+                              ),
+                              Positioned(
+                                top: 15,
+                                left: 255,
+                                child: Image.asset(
+                                  'assets/images/closeicon.png',
+                                  height: 31,
+                                  width: 31,
+                                ),
+                              )
+                            ]),
                             const SizedBox(
-                              height: 20,
-                            ),
-                            const CustomTextField(label: 'Last Name'),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const CustomTextField(label: 'Mobile Number'),
-                            const SizedBox(
-                              height: 220,
+                              height: 150,
                             ),
                             Center(
                               child: NextButton(
@@ -80,7 +86,7 @@ class SignUpProcess extends StatelessWidget {
                                         Navigator.push(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return const PaymentMethod();
+                                          return const UploadPreview();
                                         }))
                                       },
                                   text: 'Next'),
