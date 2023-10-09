@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/screens/payment_method.dart';
+import 'package:food_ninja/screens/upload_preview.dart';
 import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/utils/textstyle.dart';
-import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/next_button.dart';
+import 'package:food_ninja/widgets/payment_photo_button.dart';
 
-class SignUpProcess extends StatelessWidget {
-  const SignUpProcess({super.key});
+class UploadPhoto extends StatelessWidget {
+  const UploadPhoto({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class SignUpProcess extends StatelessWidget {
                         height: MediaQuery.sizeOf(context).height * 0.08,
                       ),
                       Text(
-                        'Fill in your bio to get \nstarted',
+                        'Upload Your Profile \nPhoto',
                         style: bigtextStyle,
                       ),
                       const SizedBox(
@@ -52,24 +52,46 @@ class SignUpProcess extends StatelessWidget {
                       const SizedBox(
                         height: 22,
                       ),
-                      const CustomTextField(label: 'First Name'),
+                      PaymentPhotoButton(
+                        height: 129,
+                        onTap: () => {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const UploadPhoto();
+                          }))
+                        },
+                        icon: Image.asset(
+                          'assets/images/GalleryIcon.png',
+                          height: 80,
+                          width: 80,
+                        ),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
-                      const CustomTextField(label: 'Last Name'),
-                      const SizedBox(
-                        height: 20,
+                      PaymentPhotoButton(
+                        height: 129,
+                        icon: Image.asset(
+                          'assets/images/PhotoIcon.png',
+                          height: 80,
+                          width: 80,
+                        ),
+                        onTap: () => {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const UploadPhoto();
+                          }))
+                        },
                       ),
-                      const CustomTextField(label: 'Mobile Number'),
                       const SizedBox(
-                        height: 220,
+                        height: 150,
                       ),
                       Center(
                         child: NextButton(
                             onTap: () => {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return const PaymentMethod();
+                                    return const UploadPreview();
                                   }))
                                 },
                             text: 'Next'),
