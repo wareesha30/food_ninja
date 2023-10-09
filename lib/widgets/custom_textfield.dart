@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/utils/colors.dart';
+import 'package:food_ninja/utils/textstyle.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
@@ -25,17 +26,19 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscure ?? false,
       style: const TextStyle(fontSize: 20),
       decoration: InputDecoration(
+        fillColor: white,
         prefixIcon: prefixIcon,
         hintText: label,
+        hintStyle: smalltextStyle,
         alignLabelWithHint: true,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
             color: blue,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
             color: grey,
           ),
