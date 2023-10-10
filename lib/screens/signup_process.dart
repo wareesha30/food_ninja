@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ninja/screens/payment_method.dart';
 import 'package:food_ninja/screens/signup.dart';
-import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/utils/textstyle.dart';
 import 'package:food_ninja/widgets/custom_textfield.dart';
 import 'package:food_ninja/widgets/next_button.dart';
@@ -45,8 +44,8 @@ class SignUpProcess extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: MediaQuery.sizeOf(context).height * 0.03,
+                            const SizedBox(
+                              height: 20,
                             ),
                             Text(
                               'Fill in your bio to get \nstarted',
@@ -72,7 +71,7 @@ class SignUpProcess extends StatelessWidget {
                             ),
                             const CustomTextField(label: 'Mobile Number'),
                             const SizedBox(
-                              height: 220,
+                              height: 100,
                             ),
                             Center(
                               child: NextButton(

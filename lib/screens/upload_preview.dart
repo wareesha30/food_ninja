@@ -26,8 +26,8 @@ class UploadPreview extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height * 0.03,
+                    const SizedBox(
+                      height: 20,
                     ),
                     InkWell(
                         onTap: () => {
@@ -78,7 +78,7 @@ class UploadPreview extends StatelessWidget {
                               )
                             ]),
                             const SizedBox(
-                              height: 150,
+                              height: 100,
                             ),
                             Center(
                               child: NextButton(

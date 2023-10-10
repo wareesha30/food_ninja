@@ -22,32 +22,31 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscure ?? false,
-      style: const TextStyle(fontSize: 20),
-      decoration: InputDecoration(
-        fillColor: white,
-        prefixIcon: prefixIcon,
-        hintText: label,
-        hintStyle: smalltextStyle,
-        alignLabelWithHint: true,
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
-            color: blue,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
-            color: grey,
-          ),
-        ),
-        contentPadding: contentPadding ??
-            EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: inputFieldHeight ?? 15.0,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: TextFormField(
+        obscureText: obscure ?? false,
+        style: const TextStyle(fontSize: 20),
+        decoration: InputDecoration(
+          fillColor: white,
+          filled: true,
+          prefixIcon: prefixIcon,
+          hintText: label,
+          hintStyle: smalltextStyle,
+          border: InputBorder.none,
+          alignLabelWithHint: true,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(
+              color: blue,
             ),
+          ),
+          contentPadding: contentPadding ??
+              EdgeInsets.symmetric(
+                horizontal: 30,
+                vertical: inputFieldHeight ?? 15.0,
+              ),
+        ),
       ),
     );
   }

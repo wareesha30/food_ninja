@@ -15,9 +15,7 @@ class PaymentPhotoButton extends StatelessWidget {
       child: Container(
         height: height ?? 70,
         decoration: BoxDecoration(
-            color: white,
-            border: Border.all(color: grey),
-            borderRadius: BorderRadius.circular(22)),
+            color: white, borderRadius: BorderRadius.circular(22)),
         child: Center(
           child: icon,
         ),

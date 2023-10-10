@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ninja/screens/signup_process.dart';
 import 'package:food_ninja/screens/upload_photo.dart';
-import 'package:food_ninja/utils/colors.dart';
 import 'package:food_ninja/utils/textstyle.dart';
 import 'package:food_ninja/widgets/next_button.dart';
 import 'package:food_ninja/widgets/payment_photo_button.dart';
@@ -45,8 +44,8 @@ class PaymentMethod extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: MediaQuery.sizeOf(context).height * 0.03,
+                            const SizedBox(
+                              height: 20,
                             ),
                             Text(
                               'Payment Method',
@@ -96,7 +95,7 @@ class PaymentMethod extends StatelessWidget {
                               },
                             ),
                             const SizedBox(
-                              height: 220,
+                              height: 100,
                             ),
                             Center(
                               child: NextButton(
